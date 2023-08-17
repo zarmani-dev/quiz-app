@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .answer-button{
+        @apply w-full p-3 text-left border border-black rounded-lg my-[10px] font-medium hover:bg-slate-900 hover:text-white duration-200 disabled:cursor-not-allowed;
+    }
+    .correct{
+        @apply bg-teal-300;
+    }
+    .incorrect{
+        @apply bg-red-300;
+    }
+}
