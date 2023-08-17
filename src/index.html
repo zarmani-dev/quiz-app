@@ -11,7 +11,7 @@
         <h1 class="text-2xl font-semibold text-slate-900 border-b border-b-black pb-4">
             Simple Quiz Game
         </h1>
-        <div class="quiz pt-[20px]">
+        <div class="quiz hidden pt-[20px]">
             <h2 class="question text-xl font-semibold text-slate-900">
                 Questions goes here
             </h2>
@@ -22,6 +22,39 @@
                 <button class="answer-button">Answer 4</button>
             </div>
             <button class="next-button bg-sky-700 py-3 px-8 rounded-lg block mx-auto text-white font-semibold">Next</button>
+            <span class="loader hidden"></span>
+        </div>
+
+        <div class="box pt-[20px]">
+            <div class="my-[10px]">
+                <label for="question-amount" class="label">Number of Questions:</label>
+                <input type="number" name="question-amount" id="question-amount" value="2" min="1" max="50" placeholder="1~50" class="w-full p-2 text-left border border-black rounded-lg my-[10px] font-medium">
+            </div>
+
+            <div class="my-[10px]">
+                <label for="category" class="label">Select Category:</label>
+                <select name="category" id="category" class="w-full p-2 text-center border border-black rounded-lg my-[10px]">
+                    <option value="">Any category</option>
+                    <option value="31">Japanes anime & manga</option>
+                    <option value="27">Animals</option>
+                    <option value="18">Computer</option>
+                    <option value="12">Music</option>
+                    <option value="9">General Knowledge</option>
+                    <option value="10">Books</option>
+                </select>
+            </div>
+
+            <div class="my-[10px]">
+                <label for="difficulty" class="label">Select Difficulty:</label>
+                <select name="difficulty" id="difficulty" class="w-full p-2 text-center border border-black rounded-lg my-[10px]">
+                    <option value="">Any Difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+
+            <button class="w-full start-button text-center bg-sky-700 py-2 rounded-lg block cursor-pointer text-white font-semibold">Start</button>
         </div>
     </div>
 

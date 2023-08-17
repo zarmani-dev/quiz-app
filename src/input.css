@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+    .container {
+        @apply w-[90%] max-w-[600px] bg-white p-[30px] mt-[80px] mx-auto mb-0 rounded-[10px];
+    }
     .answer-button{
         @apply w-full p-3 text-left border border-black rounded-lg my-[10px] font-medium hover:bg-slate-900 hover:text-white duration-200 disabled:cursor-not-allowed;
     }
@@ -12,4 +15,43 @@
     .incorrect{
         @apply bg-red-300;
     }
+    .label {
+        @apply font-medium text-lg text-slate-900;
+    }
+}
+
+@layer utilities {
+    .loader {
+        width: 48px;
+        height: 48px;
+        /* display: none; */
+        position: relative;
+      }
+      .loader::after,
+      .loader::before {
+        content: '';  
+        box-sizing: border-box;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 2px solid #000;
+        position: absolute;
+        left: 0;
+        top: 0;
+        animation: animloader 2s linear infinite;
+      }
+      .loader::after {
+        animation-delay: 1s;
+      }
+      
+      @keyframes animloader {
+        0% {
+          transform: scale(0);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
 }

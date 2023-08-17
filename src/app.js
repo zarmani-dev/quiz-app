@@ -1,18 +1,48 @@
+// https://opentdb.com/api.php?amount=2&category=10&difficulty=easy
+
+// https://opentdb.com/api.php?amount=10
+
+
 //DOM selectors
+
 const question = document.querySelector(".question");
 const buttonContainer = document.querySelector(".buttons");
 const nextBtn = document.querySelector(".next-button");
+const loader = document.querySelector(".loader");
+
+const startBtn = document.querySelector(".start-button");
+const questionAmountElement = document.getElementById("question-amount");
+const categoryElement = document.getElementById("category");
+const difficultyElement = document.getElementById("difficulty");
+
+let questionAmount = 0;
+let category = "";
+let difficulty = "";
+let url = "";
+
+startBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    questionAmount = questionAmountElement.value;
+    category = categoryElement.value;
+    difficulty = difficultyElement.value;
+
+    url = `https://opentdb.com/api.php?amount=${questionAmount}&difficulty=${difficulty}&category=${category}&type=multiple`;   
+    console.log(url);
+    startQuiz();
+    document.querySelector(".box").style.display = "none";
+    document.querySelector(".quiz").style.display = "block";
+});
+
 
 // Fetch API & Display output
 
-const url = "https://opentdb.com/api.php?amount=4&difficulty=easy&type=multiple";
 
 function fetchApi(path) {
     fetch(path)
     .then(res => res.json())
     .then(data => displayOutput(data))
 };
-
 
 let currentIndex = 0;
 let score = 0;
@@ -21,10 +51,11 @@ let trivia;
 const startQuiz = () => {
     currentIndex = 0;
     score = 0;
+    nextBtn.innerHTML = "Next";
     fetchApi(url);
 }
 
-startQuiz();
+// startQuiz();
 
 function displayOutput(data) {
     resetState();
