@@ -7,7 +7,7 @@
         @apply w-[90%] max-w-[600px] bg-white p-[30px] mt-[80px] mx-auto mb-0 rounded-[10px];
     }
     .answer-button{
-        @apply w-full p-3 text-left border border-black rounded-lg my-[10px] font-medium hover:bg-slate-900 hover:text-white duration-200 disabled:cursor-not-allowed;
+        @apply w-full p-3 text-left border border-black rounded-lg my-[10px] font-medium focus:bg-transparent hover:bg-slate-900 hover:text-white duration-200 disabled:cursor-not-allowed;
     }
     .correct{
         @apply bg-teal-300;
