@@ -19,6 +19,7 @@ let questionAmount = 0;
 let category = "";
 let difficulty = "";
 let url = "";
+// url = "https://opentdb.com/api.php?amount=2&type=multiple";
 
 startBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -53,6 +54,7 @@ const startQuiz = () => {
     score = 0;
     nextBtn.innerHTML = "Next";
     fetchApi(url);
+
 }
 
 // startQuiz();
@@ -63,6 +65,7 @@ function displayOutput(data) {
     trivia = data.results;
     let currentQueston = trivia[currentIndex];
     let currentAnswer = currentQueston.correct_answer;
+    document.querySelector(".countQuiz").innerHTML = `<span>${currentIndex+1}/${questionAmount}</span>`;
 
     question.innerHTML = `${currentIndex + 1}. ${currentQueston.question}`;
     let answers = [...currentQueston.incorrect_answers, currentQueston.correct_answer];

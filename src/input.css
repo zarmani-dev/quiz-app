@@ -22,7 +22,7 @@
 
 @layer utilities {
     .answer-button:hover:not([disabled]) {
-        background: #222;
+        background: #152342;
         color: #fff;
     }
     .answer-button:disabled {
